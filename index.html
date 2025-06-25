@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Karanlıkta</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="glitch" data-text="Sistem Çöküyor...">Sistem Çöküyor...</div>
+  <div class="text-container" id="textContainer"></div>
+  <div class="final-message" id="finalMessage">
+    Benim artık dermanım yok.<br>
+    Bu düşünceler beynimde yankılanıyor...<br>
+    Geri dönüş var mı bilmiyorum.
+  </div>
+
+  <script>
+    const container = document.getElementById('textContainer');
+    const finalMessage = document.getElementById('finalMessage');
+    const glitch = document.querySelector('.glitch');
+
+    setTimeout(() => {
+      glitch.style.display = 'none';
+      container.style.display = 'block';
+      container.innerText = generateLongText();
+    }, 20000);
+
+    setTimeout(() => {
+      container.style.display = 'none';
+      finalMessage.style.display = 'block';
+    }, 60000);
+
+    function generateLongText() {
+      let paragraph = "Karanlık içimde büyüyor. Sessizlik kulaklarımı parçalayacak gibi. Gözlerim gerçek ile hayal arasında bir yerde kayboluyor. Her düşünce bir çığlık gibi yankılanıyor zihnimde. ";
+      return paragraph.repeat(1000);
+    }
+  </script>
+</body>
+</html>
